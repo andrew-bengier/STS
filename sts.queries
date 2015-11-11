@@ -1,0 +1,15 @@
+//SQL Queries
+//View all
+curStat=SELECT * FROM `STS-Data`.Student
+
+//View by criteria
+mathByTeacher=SELECT DISTINCT `Teacher`, `PerformanceLevel`, count(`PerformanceLevel`) as Count, `Year` FROM `STS-Data`.Student WHERE `Year` = 2015 GROUP BY `Teacher`, `PerformanceLevel`
+
+//Insert into DB
+insertStudent3=INSERT IGNORE INTO `STS-Data`.Student (TestType,Year,Teacher,LastName,FirstName,TestID,StudentID,Score,PerformanceLevel,RC01,RC02,RC03)
+insertStudent4=INSERT IGNORE INTO `STS-Data`.Student (TestType,Year,Teacher,LastName,FirstName,TestID,StudentID,Score,PerformanceLevel,RC01,RC02,RC03,RC04)
+
+//Update Retakes
+tempTableM=CREATE TEMPORARY TABLE IF NOT EXISTS `STS-Data`.temp AS ( SELECT `STS-Data`.Student.*	FROM `STS-Data`.Student, `STS-Data`.Student AS vtable WHERE vtable.`StudentID` < `STS-Data`.Student.`StudentID` AND vtable.`TestID` = `STS-Data`.Student.`TestID`);
+updateTypeM=UPDATE `STS-Data`.Student std, `STS-Data`.temp tmp SET std.`TestType` = 'A' WHERE std.`TestID` = tmp.`TestID` AND std.`TestType`= 'M' AND not std.`StudentID` = '';
+updateSIDM=UPDATE `STS-Data`.Student std, `STS-Data`.temp tmp SET std.`StudentID` = tmp.`StudentID` WHERE std.`TestID` = tmp.`TestID` AND std.`TestType`= 'M';

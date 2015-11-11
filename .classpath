@@ -2,5 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/AB/Dropbox/Eclipse/libraries/opencsv-3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AB/Dropbox/Eclipse/libraries/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AB/Dropbox/Eclipse/libraries/jexcelapi_2_6_12/jexcelapi/jxl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AB/Dropbox/Eclipse/libraries/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AB/Dropbox/Eclipse/libraries/poi-ooxml-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/AB/Dropbox/Eclipse/libraries/miglayout-4.0.jar/miglayout-4.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
